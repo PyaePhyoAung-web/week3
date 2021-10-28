@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Callbacks</title><meta charset="utf-8">
+ </head>
+ <body>
+   <input id="inp" type="text" />
+   <button id="bt" onclick="task();"> click </button>
+   <script>
+ 
+     async function task(){
+       const input = document.getElementById('inp');
+       let IN=await fetch(input.value);
+       input.value='';
+       input.value=await IN.text();
+     }
+   </script>
+   
+ </body>
+</html>
